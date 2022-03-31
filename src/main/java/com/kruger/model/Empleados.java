@@ -1,0 +1,139 @@
+package com.kruger.model;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TBL_EMPLEADOS")
+public class Empleados {
+	
+	@Id
+	@SequenceGenerator(name = "SEQEMPLEADO", sequenceName = "SEQEMPLEADO", allocationSize = 1) 
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQEMPLEADO")
+	@Column(name="id_empleado")
+	private Long idEmpleado;
+	
+	@Column(name="cedula", nullable=false)
+	private int cedula;
+	
+	@Column(name="nombres", nullable=false)
+	private String nombres;
+	
+	@Column(name="apellidos", nullable=false)
+	private String apellidos;
+	
+	@Column(name="correo", nullable=false)
+	private String correo;
+	
+	@Column(name="fechaNacimiento", nullable=false)
+	private Date fechaNacimiento;
+	
+	@Column(name="direccion", nullable=false)
+	private String direccion;
+	
+	@Column(name="celular", nullable=false)
+	private int celular;
+	
+	@Column(name="estado", nullable=false)
+	private String estado;
+	
+	@OneToMany(mappedBy="empleado")
+	private List<Vacuna> vacuna;
+
+	@ManyToOne
+	@JoinColumn(name = "id_rol", nullable=false)
+	private Rol rol;
+	
+	public Long getIdEmpleado() {
+		return idEmpleado;
+	}
+
+	public void setIdEmpleado(Long idEmpleado) {
+		this.idEmpleado = idEmpleado;
+	}
+
+	public int getCedula() {
+		return cedula;
+	}
+
+	public void setCedula(int cedula) {
+		this.cedula = cedula;
+	}
+
+	public String getNombres() {
+		return nombres;
+	}
+
+	public void setNombres(String nombres) {
+		this.nombres = nombres;
+	}
+
+	public String getApellidos() {
+		return apellidos;
+	}
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public int getCelular() {
+		return celular;
+	}
+
+	public void setCelular(int celular) {
+		this.celular = celular;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public List<Vacuna> getVacuna() {
+		return vacuna;
+	}
+
+	public void setVacuna(List<Vacuna> vacuna) {
+		this.vacuna = vacuna;
+	}
+
+}
