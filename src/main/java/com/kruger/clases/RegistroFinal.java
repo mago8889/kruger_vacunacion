@@ -1,0 +1,39 @@
+package com.kruger.clases;
+
+import java.util.List;
+
+import com.kruger.model.Vacuna;
+
+public class RegistroFinal {
+	
+	private Long idUser;
+	private String direccion;
+	private int celular;
+	private List<Vacuna> vacuna;
+	
+	public Long getIdUser() {
+		return idUser;
+	}
+	public void setIdUser(Long idUser) {
+		this.idUser = idUser;
+	}
+	public String getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+	public int getCelular() {
+		return celular;
+	}
+	public void setCelular(int celular) {
+		this.celular = celular;
+	}
+	public List<Vacuna> getVacuna() {
+		return vacuna;
+	}
+	public void setVacuna(List<Vacuna> vacuna) {
+		this.vacuna = vacuna;
+	}
+
+}

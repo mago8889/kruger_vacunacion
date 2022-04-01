@@ -6,6 +6,8 @@ import com.kruger.model.Empleados;
 
 public interface EmpleadoService extends CrudRepository<Empleados, Long> {
 	
+	Empleados findByidEmpleado(Long idEmpleado);
 	
+	Empleados findBycedula(int cedula);
 
 }

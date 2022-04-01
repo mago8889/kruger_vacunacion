@@ -28,6 +28,9 @@ public class Empleados {
 	@Column(name="cedula", nullable=false)
 	private int cedula;
 	
+	@Column(name="clave", nullable=true)
+	private String clave;
+	
 	@Column(name="nombres", nullable=false)
 	private String nombres;
 	
@@ -37,25 +40,41 @@ public class Empleados {
 	@Column(name="correo", nullable=false)
 	private String correo;
 	
-	@Column(name="fechaNacimiento", nullable=false)
+	@Column(name="fechaNacimiento", nullable=true)
 	private Date fechaNacimiento;
 	
-	@Column(name="direccion", nullable=false)
+	@Column(name="direccion", nullable=true)
 	private String direccion;
 	
-	@Column(name="celular", nullable=false)
+	@Column(name="celular", nullable=true)
 	private int celular;
 	
-	@Column(name="estado", nullable=false)
+	@Column(name="estado", nullable=true)
 	private String estado;
 	
 	@OneToMany(mappedBy="empleado")
 	private List<Vacuna> vacuna;
 
 	@ManyToOne
-	@JoinColumn(name = "id_rol", nullable=false)
+	@JoinColumn(name = "id_rol", nullable=true)
 	private Rol rol;
 	
+	public String getClave() {
+		return clave;
+	}
+
+	public void setClave(String clave) {
+		this.clave = clave;
+	}
+
+	public Rol getRol() {
+		return rol;
+	}
+
+	public void setRol(Rol rol) {
+		this.rol = rol;
+	}
+
 	public Long getIdEmpleado() {
 		return idEmpleado;
 	}
