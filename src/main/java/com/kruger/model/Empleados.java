@@ -2,14 +2,18 @@ package com.kruger.model;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
@@ -55,24 +59,29 @@ public class Empleados {
 	@OneToMany(mappedBy="empleado")
 	private List<Vacuna> vacuna;
 
-	@ManyToOne
-	@JoinColumn(name = "id_rol", nullable=true)
-	private Rol rol;
+	@ManyToMany(cascade = {CascadeType.MERGE},fetch= FetchType.EAGER)
+	@JoinTable(name = "TBL_USER_ROL", joinColumns = @JoinColumn(name = "id_empleado", referencedColumnName = "id_empleado"),
+    inverseJoinColumns = @JoinColumn(name = "id_rol", referencedColumnName = "id_rol"))
+	private List<Rol> roles;
+	
+	//@ManyToOne
+	//@JoinColumn(name = "id_rol", nullable=true)
+	//private Rol rol;
 	
 	public String getClave() {
 		return clave;
 	}
 
+	public List<Rol> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Rol> list) {
+		this.roles = list;
+	}
+
 	public void setClave(String clave) {
 		this.clave = clave;
-	}
-
-	public Rol getRol() {
-		return rol;
-	}
-
-	public void setRol(Rol rol) {
-		this.rol = rol;
 	}
 
 	public Long getIdEmpleado() {

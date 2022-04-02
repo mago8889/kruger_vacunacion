@@ -1,5 +1,7 @@
 package com.kruger.clases;
 
+import java.util.List;
+
 import com.kruger.model.Rol;
 
 public class RegistroInicial {
@@ -8,13 +10,13 @@ public class RegistroInicial {
 	private String nombres;
 	private String apellidos;
 	private String correo;
-	private Rol rol;
+	private List<Rol> roles;
 	
-	public Rol getRol() {
-		return rol;
+	public List<Rol> getRoles() {
+		return roles;
 	}
-	public void setRol(Rol rol) {
-		this.rol = rol;
+	public void setRoles(List<Rol> roles) {
+		this.roles = roles;
 	}
 	public int getCedula() {
 		return cedula;
