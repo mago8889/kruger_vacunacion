@@ -2,14 +2,30 @@ package com.kruger.clases;
 
 import java.util.List;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+
 import com.kruger.model.Rol;
 
 public class RegistroInicial {
 
+	@NotEmpty
 	private int cedula;
+	
+	@Pattern(regexp = "[a-zA-Z]+",message = "Se debe ingresar solo letras")
+	@NotEmpty
 	private String nombres;
+	
+	@Pattern(regexp = "[a-zA-Z]+",message = "Se debe ingresar solo letras")
+	@NotEmpty
 	private String apellidos;
+	
+	@NotEmpty
+	@Email (message = "Error de formato de correo electrónico")
 	private String correo;
+	
+	@NotEmpty
 	private List<Rol> roles;
 	
 	public List<Rol> getRoles() {

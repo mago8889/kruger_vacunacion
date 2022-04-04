@@ -66,7 +66,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().
                 authorizeRequests()
-                .antMatchers("/api/empleado/free/**").permitAll()
+                .antMatchers("/api/**").permitAll()
+                .antMatchers("/v3/**").permitAll()
+                .antMatchers("/api-docs/**").permitAll()
+                .antMatchers("/**").permitAll()
                 //.antMatchers("/p/**").permitAll()
                 .anyRequest().authenticated()
                 .and()

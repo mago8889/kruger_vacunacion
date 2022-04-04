@@ -13,6 +13,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="TBL_VACUNA")
 public class Vacuna {
@@ -35,6 +37,7 @@ public class Vacuna {
 	
 	@ManyToOne
     @JoinColumn(name="id_empleado", nullable=false)
+	@JsonIgnore
 	private Empleados empleado;
 	
 	public Long getIdVacuna() {

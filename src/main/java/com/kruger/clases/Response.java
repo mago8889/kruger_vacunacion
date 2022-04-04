@@ -21,7 +21,7 @@ public class Response {
 	public void setDescription(String description) {
 		Description = description;
 	}
-	public Object getObjectResponse() {
+	/*public Object getObjectResponse() {
 		return objectResponse;
 	}
 	public void setObjectResponse(Object objectResponse) {
@@ -35,5 +35,13 @@ public class Response {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}*/
+	public Object getObjectResponse() {
+		return objectResponse;
 	}
+	public void setObjectResponse(Object objectResponse) {
+		this.objectResponse = objectResponse;
+	}
+	
+	
 }

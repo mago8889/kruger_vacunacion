@@ -9,6 +9,6 @@ import com.kruger.model.Vacuna;
 
 public interface VacunaService extends CrudRepository<Vacuna, Long> {
 	
-	List<Vacuna> findByfechaVacunacion(Date fechaVacunacion);
+	List<Vacuna> findByfechaVacunacionBetween(Date fecInicio, Date fecFin);
 
 }

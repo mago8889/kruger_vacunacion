@@ -6,16 +6,16 @@ import com.kruger.model.Vacuna;
 
 public class RegistroFinal {
 	
-	private Long idUser;
+	private Long idEmpleado;
 	private String direccion;
 	private int celular;
 	private List<Vacuna> vacuna;
 	
-	public Long getIdUser() {
-		return idUser;
+	public Long getIdEmpleado() {
+		return idEmpleado;
 	}
-	public void setIdUser(Long idUser) {
-		this.idUser = idUser;
+	public void setIdEmpleado(Long idEmpleado) {
+		this.idEmpleado = idEmpleado;
 	}
 	public String getDireccion() {
 		return direccion;
