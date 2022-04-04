@@ -24,4 +24,11 @@ Ejecucion
 Esta programado para levantarse en el puerto 8090
 Swagger esta en la siguiente url http://localhost:8090/swagger-ui/index.html
 
+Usuarios
+Rol Administrador
+user: 123456789 clave: 1MReq
+
+Rol Empleado
+user: 987654321 clave: m3wO6
+
 Realizado por William Morales
